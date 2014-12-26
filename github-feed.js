@@ -1,3 +1,10 @@
+/***********************************************************
+* #### jQuery-Github-Feed v1.0 ####
+* Coded by Ican Bachors 2014.
+* https://github.com/bachors/jQuery-Github-Feed
+* Updates will be posted to this site.
+***********************************************************/
+
 var username = 'bachors';
 			ibacor_repos(username);
 			ibacor_gists(username);
