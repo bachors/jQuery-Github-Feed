@@ -6,26 +6,34 @@
 	
 		<title>jQuery Github Feed - iBacor.com</title>
 
-		<!-- Include Font Awesome -->
-		<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- Include Octicons -->
+		<link href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" rel="stylesheet">
+		
+		<!-- Custom Github Feed style -->
+		<link type="text/css" rel="stylesheet" href="src/github-feed.css" />
+		
+	</head>
+	<body>
+		
+		<!-- Demo -->
+		<div class="anu" style="height:auto;width:700px;margin:10px auto"></div>
 		
 		<!-- Include jQuery -->
 		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 		
 		<!-- Include jQuery Github Feed-->
-		<script src="github-feed.js"></script>
-		
-		<!-- Custom Github Feed style -->
-		<link type="text/css" rel="stylesheet" href="style.css" />
-		
-	</head>
-	<body>
-		
-		<h1>Repository</h1>
-		<div id="ibacor_repos"></div>
-		
-		<h1>Gist</h1>
-		<div id="ibacor_gists"></div>
+		<script src="src/github-feed.js"></script>
+		<script>
+		$(document).ready(function(){
+			
+			// Setting
+			$(".anu").githubfeed(
+				username = "bachors", // your github username
+				sort = "updated" // Can be one of created, updated, pushed, full_name.
+			);
+
+		});
+		</script>
 
 	</body>
 </html>
