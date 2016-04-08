@@ -93,12 +93,14 @@ $.fn.githubfeed = function(g, h) {
             var c = '',
                 ibacor = $('.jgf').attr('href').split("/");
             $.each(b, function(i, a) {
+				var keys = Object.keys(b[i].files);
                 c += '<div class="result">';
                 c += '	<div class="icon">';
                 c += '		<span class="octicon octicon-code"></span>';
                 c += '	</div>';
                 c += '	<div class="gfpost">';
-                c += '		<a href="' + b[i].html_url + '" target="_blank">' + b[i].description + '</a>';
+                c += '		<a href="' + b[i].html_url + '" target="_blank">' + keys[0] + '</a>';
+				c += '		<p>' + b[i].description + '</p>';
                 c += '		<p class="date">' + relative_time(b[i].created_at) + ' ago - update ' + relative_time(b[i].updated_at) + ' ago</p>';
                 c += '	</div>';
                 c += '	<div class="contributor">';
