@@ -28,4 +28,4 @@ $(document).ready(function(){
 &lt;/script&gt;</pre>
 <h2>SCREENSHOT</h2>
 <p><img src="https://scontent.cdninstagram.com/t51.2885-15/e15/12905217_456189164579580_2077582099_n.jpg"/></p>
-<a href="http://ibacor.com/sosmed/github">DEMO</a>
+<h2><a href="http://bachors.github.io/">DEMO</a></h2>
