@@ -1,0 +1,221 @@
+/***********************************************************
+* #### jQuery-Github-Feed v2.0 ####
+* Coded by Ican Bachors 2014.
+* https://github.com/bachors/jQuery-Github-Feed
+* Updates will be posted to this site.
+***********************************************************/
+
+.github-feed {
+	font-family: Helvetica, arial, freesans, clean, sans-serif;
+	width: 100%;
+	height: 100%;
+	font-weight: bold;
+	line-height: 1.3;
+	border: 1px solid #d8d8d8;
+	color: #767676;
+}
+
+.github-feed a {
+	color: #4183c4;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* header */
+.github-feed .head {
+	font-size: 1.2em;
+	width: calc(100% - 20px);
+	padding: 10px;
+	height: 67px;
+	background: #f5f5f5;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.github-feed .head a {
+	color: #767676;
+}
+
+.github-feed .head .github {
+	display: inline;
+	float: left;
+	padding: 9px 0 0;
+	width: 35px;
+	height: 35px;
+	margin-right: 10px;
+}
+
+.github-feed .head .github .octicon {
+	font-size: 50px;
+}
+
+.github-feed .head .user {
+	display: inline-block;
+	float: left;
+	margin: 0 auto;
+	padding: 6px 10px 5px;
+}
+
+.github-feed .head .user p {
+	margin: 0;
+	padding: 0;
+}
+
+.github-feed .head .image {
+	display: inline;
+	float: right;
+	margin-right: 10px;
+	max-width: 60px;
+	height: 67px;
+}
+
+.github-feed .head .image img {
+	padding: 3px;
+	width: 100%;
+	border: 1px solid #d8d8d8;
+}
+
+/* tabs */
+.github-feed  .gftabs {
+	display: block;
+	width: 100%;
+}
+
+.github-feed  .gftabs .gftab {
+	background: #fafafa;
+	color: #767676;
+	display: inline-block;
+	padding: 0px;
+	width: 33.33%;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+
+.github-feed  .gftabs .aktip, .github-feed  .gftabs .gftab:hover {
+	background: #fff;
+}
+
+/* body */
+.github-feed .bod {
+	font-size: 1em;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	height: auto;
+	max-height: 500px;
+	background: #fff;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.github-feed .bod .result {
+	display: block;
+	padding: 10px;
+	padding-right: 0;
+	width: calc(100% - 10px);
+	border-bottom: 1px solid #d8d8d8;
+	font-weight: normal;
+}
+
+.github-feed .bod .result .icon {
+	display: inline-block;
+	float: left;
+	width: 35px;
+	margin-right: 10px;
+}
+
+.github-feed .bod .result .icon .octicon {
+	font-size: 40px;
+	font-weight: normal;
+}
+
+.github-feed .bod .bachorsactiv .result .icon .octicon {
+	font-size: 30px;
+	color: #d8d8d8;
+}
+
+.github-feed .bod .bachorsactiv .result .gfpost {
+	display: inline-block;
+	width: calc(100% - 60px);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 0.9em;
+	color: #000;
+}
+
+.github-feed .bod .result .gfpost {
+	display: inline-block;
+	width: calc(100% - 120px);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.github-feed .bod .result .contributor {
+	display: inline-block;
+	margin-left: 10px;
+	width: 50px;
+	font-size: 0.8em;
+	text-align: right;
+}
+
+.github-feed .bod .result .contributor .octicon {
+	width: 10px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.github-feed .bod .result .contributor a {
+	color: #767676;
+	font-weight: normal;
+}
+
+.github-feed .bod .result .contributor a span {
+	color: #aaa;
+}
+
+.github-feed .bod .result .gfpost p {
+	margin: 0;
+	padding: 0;
+	font-size: 0.8em;
+	color: #767676;
+	clear: both;
+}
+
+.github-feed .bod .result .gfpost p a {
+	font-weight: normal;
+}
+
+.github-feed .bod .result .gfpost p img {
+	margin-top: 5px;
+	display: inline;
+	width: 30px;
+	margin-right: 5px;
+}
+
+.github-feed .bod .result .gfpost p img.letik {
+	width: 20px;
+}
+
+.github-feed .bod .result .gfpost .date {
+	margin: 0;
+	padding: 0;
+	font-size: 0.8em;
+	color: #bbb;
+}
+
+/* footer */
+.github-feed .foot {
+	background: #f5f5f5;
+	width: calc(100% - 20px);
+	padding: 5px 10px 5px 10px;
+	border-top: 1px solid #d8d8d8;
+	font-size: 0.8em;
+}
+
+.github-feed .foot a {
+	float: right;
+	color: #bbb;
+}
