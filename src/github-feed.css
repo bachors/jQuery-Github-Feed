@@ -139,7 +139,6 @@
 	display: inline-block;
 	width: calc(100% - 60px);
 	overflow: hidden;
-	white-space: nowrap;
 	text-overflow: ellipsis;
 	font-size: 0.9em;
 	color: #000;
@@ -149,7 +148,6 @@
 	display: inline-block;
 	width: calc(100% - 120px);
 	overflow: hidden;
-	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 
