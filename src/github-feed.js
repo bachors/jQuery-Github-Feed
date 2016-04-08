@@ -125,7 +125,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '		<span class="octicon octicon-star"></span>';
                     e += '	</div>';
                     e += '	<div class="gfpost">';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += d[i].payload.action + ' ';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
                     e += '		<span class="date">' + relative_time(d[i].created_at) + ' ago</span>';
@@ -137,7 +137,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '		<span class="octicon octicon-repo-forked"></span>';
                     e += '	</div>';
                     e += '	<div class="gfpost">';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += '		forked ';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a> to';
                     e += '		<a href="https://github.com/' + d[i].payload.forkee.full_name + '" target="_blank">' + d[i].payload.forkee.full_name + '</a>';
@@ -151,7 +151,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '	</div>';
                     e += '	<div class="gfpost">';
                     e += '		<p class="date">' + relative_time(d[i].created_at) + ' ago</p>';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += '		released ';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '/release/tag/' + d[i].payload.release.tag_name + '" target="_blank">' + d[i].payload.release.tag_name + '</a> at';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
@@ -166,7 +166,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '	</div>';
                     e += '	<div class="gfpost">';
                     e += '		<p class="date">' + relative_time(d[i].created_at) + ' ago</p>';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += '		commented on issue ';
                     e += '		<a href="' + d[i].payload.issue.html_url + '" target="_blank">' + d[i].repo.name + '#' + d[i].payload.issue.number + '</a>';
                     e += '		<p><img src="' + d[i].actor.avatar_url + '"/> ' + d[i].payload.comment.body + '</p>';
@@ -185,7 +185,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '	</div>';
                     e += '	<div class="gfpost">';
                     e += '		<p class="date">' + relative_time(d[i].created_at) + ' ago</p>';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += b + ' ';
                     e += '		<a href="' + d[i].payload.issue.html_url + '" target="_blank">' + d[i].repo.name + '#' + d[i].payload.issue.number + '</a>';
                     e += '		<p><img src="' + d[i].actor.avatar_url + '"/> ' + d[i].payload.issue.title + '</p>';
@@ -203,7 +203,7 @@ $.fn.githubfeed = function(g, h) {
                     e += '	</div>';
                     e += '	<div class="gfpost">';
                     e += '		<p class="date">' + relative_time(d[i].created_at) + ' ago</p>';
-                    e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                    e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                     e += '		pushed to ';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '/tree/' + d[i].payload.ref + '" target="_blank">' + rep + '</a> at ';
                     e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
@@ -228,7 +228,7 @@ $.fn.githubfeed = function(g, h) {
                         e += '		<span class="octicon octicon-git-branch"></span>';
                         e += '	</div>';
                         e += '	<div class="gfpost">';
-                        e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                        e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                         e += '		created branch ';
                         e += '		<a href="https://github.com/' + d[i].repo.name + '/tree/' + d[i].payload.ref + '" target="_blank">' + d[i].payload.ref + '</a> at ';
                         e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
@@ -241,7 +241,7 @@ $.fn.githubfeed = function(g, h) {
                         e += '		<span class="octicon octicon-plus"></span>';
                         e += '	</div>';
                         e += '	<div class="gfpost">';
-                        e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                        e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                         e += '		created repository ';
                         e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
                         e += '		<span class="date">' + relative_time(d[i].created_at) + ' ago</span>';
@@ -253,7 +253,7 @@ $.fn.githubfeed = function(g, h) {
                         e += '		<span class="octicon octicon-tag"></span>';
                         e += '	</div>';
                         e += '	<div class="gfpost">';
-                        e += '		<a href="' + d[i].actor.url + '" target="_blank">' + d[i].actor.login + '</a> ';
+                        e += '		<a href="https://github.com/' + d[i].actor.login + '" target="_blank">' + d[i].actor.login + '</a> ';
                         e += '		created tag ';
                         e += '		<a href="https://github.com/' + d[i].repo.name + '/tree/'+d[i].payload.ref+'" target="_blank">' + d[i].payload.ref + '</a> at';
                         e += '		<a href="https://github.com/' + d[i].repo.name + '" target="_blank">' + d[i].repo.name + '</a>';
