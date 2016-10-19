@@ -1,61 +1,72 @@
 /***********************************************************
-* #### jQuery-Github-Feed v2.0 ####
+* #### jQuery-Github-Feed v3.0 ####
 * Coded by Ican Bachors 2014.
 * https://github.com/bachors/jQuery-Github-Feed
 * Updates will be posted to this site.
 ***********************************************************/
 
-$.fn.githubfeed = function(g, h) {
-    var j = '<div class="github-feed">';
-    j += '<div class="head"></div>';
-    j += '<div class="gftabs"><div class="gftab aktip" data-dip="repos">Repositories</div><div class="gftab" data-dip="activ">Activity</div><div class="gftab" data-dip="gists">Gists</div></div>';
-    j += '<div class="bod">';
-    j += '	<div class="feed bachorsrepos"></div>';
-    j += '	<div class="feed bachorsgists" style="display:none"></div>';
-    j += '	<div class="feed bachorsactiv" style="display:none"></div>';
-    j += '</div>';
-    j += '<div class="foot">';
-    j += '	Github Feed <a href="https://github.com/bachors/jQuery-Github-Feed" class="jgf" target="_blank">made with <i class="octicon octicon-heart" style="color:salmon"></i></a>';
-    j += '</div>';
-    j += '</div>';
-    $(this).html(j);
-    ibacor_profil(g);
-    ibacor_repos(g);
-    ibacor_gists(g);
-    ibacor_activs(g);
+$.fn.githubfeed = function(h, width, height) {
+	
+	$(this).each(function(i, a) {
+		var b = ($(this).attr('id') != null ? '#' + $(this).attr('id') : '.' + $(this).attr('class')),
+			g = $(this).data('username'),
+			j = '';
+			
+		j += '<div class="github-feed" style="width: ' + width + '">';
+		j += '<div class="head"></div>';
+		j += '<div class="gftabs"><div class="gftab aktip" data-dip="repos">Repositories <sup class="repc"></sup></div><div class="gftab" data-dip="activ">Activity</div><div class="gftab" data-dip="gists">Gists <sup class="gisc"></sup></div></div>';
+		j += '<div class="bod" style="height: ' + height + '">';
+		j += '	<div class="feed bachorsrepos"></div>';
+		j += '	<div class="feed bachorsgists" style="display:none"></div>';
+		j += '	<div class="feed bachorsactiv" style="display:none"></div>';
+		j += '</div>';
+		j += '<div class="foot">';
+		j += '	Github Feed <a href="https://github.com/bachors/jQuery-Github-Feed" class="jgf" target="_blank">made with <i class="octicon octicon-heart" style="color:salmon"></i></a>';
+		j += '</div>';
+		j += '</div>';
+		$(this).html(j);
+		
+		ibacor_profil(g, i, b);
+		ibacor_repos(g, i, b);
+		ibacor_gists(g, i, b);
+		ibacor_activs(g, i, b);
+    });    
 
-    function ibacor_profil(d) {
+    function ibacor_profil(d, x, z) {
         $.ajax({
             url: 'https://api.github.com/users/' + d,
             crossDomain: true,
             dataType: 'json'
         }).done(function(b) {
-            var c = '	<div class="github">',
+            var c = '<div class="left">',
                 ibacor = $('.jgf').attr('href').split("/");
-            c += '		<span class="octicon octicon-mark-github"></span>';
-            c += '	</div>';
-            c += '	<div class="user">';
-            c += '		<a href="https://github.com/' + b.login + '" target="_blank">' + b.name + '</a>';
-            c += '		<p>';
-            c += '			<a href="https://github.com/' + b.login + '" target="_blank">' + b.login + '</a>';
-            c += '		</p>';
-            c += '	</div>';
-            c += '	<div class="image">';
             c += '		<a href="https://github.com/' + b.login + '" target="_blank"><img src="' + b.avatar_url + '"></a>';
             c += '	</div>';
-            $('.github-feed .head').html(c);
-            $('.github-feed .gftab').click(function() {
-                $('.github-feed .gftab').removeClass('aktip');
-                $('.github-feed .feed').css('display', 'none');
+            c += '	<div class="right">';
+            c += '		<a href="https://github.com/' + b.login + '" target="_blank">' + b.name + '</a>';
+			if(b.type != 'User'){
+				c += '		<p>' + (b.bio != null ? b.bio : '') + '</p>';
+            }
+            c += '		<p><span class="octicon octicon-location"></span> ' + (b.location != null ? b.location : '') + '</p>';
+			if(b.type == 'User'){
+				c += '		<p><span class="user">Followers <span>'+ b.followers + '</span></span> <span class="user">Following <span>'+ b.following + '</span></span></p>';
+            }
+			c += '	</div>';
+            $(z + ':eq(' + x + ') .github-feed .head').html(c);
+            $(z + ':eq(' + x + ') .github-feed sup.repc').html(b.public_repos);
+            $(z + ':eq(' + x + ') .github-feed sup.gisc').html(b.public_gists);
+            $(z + ':eq(' + x + ') .github-feed .gftab').click(function() {
+                $(z + ':eq(' + x + ') .github-feed .gftab').removeClass('aktip');
+                $(z + ':eq(' + x + ') .github-feed .feed').css('display', 'none');
                 var a = $(this).data('dip');
                 $(this).addClass('aktip');
-                $('.' + ibacor[3] + a).css('display', 'block');
+                $(z + ':eq(' + x + ') .' + ibacor[3] + a).css('display', 'block');
                 return false
             })
         })
     }
 
-    function ibacor_repos(d) {
+    function ibacor_repos(d, x, z) {
         $.ajax({
             url: 'https://api.github.com/users/' + d + '/repos?type=all&sort=' + h,
             crossDomain: true,
@@ -80,11 +91,11 @@ $.fn.githubfeed = function(g, h) {
                 c += '	</div>';
                 c += '</div>'
             });
-            $('.' + ibacor[3] + 'repos').html(c)
+            $(z + ':eq(' + x + ') .' + ibacor[3] + 'repos').html(c)
         })
     }
 
-    function ibacor_gists(d) {
+    function ibacor_gists(d, x, z) {
         $.ajax({
             url: 'https://api.github.com/users/' + d + '/gists',
             crossDomain: true,
@@ -100,7 +111,7 @@ $.fn.githubfeed = function(g, h) {
                 c += '	</div>';
                 c += '	<div class="gfpost">';
                 c += '		<a href="' + b[i].html_url + '" target="_blank">' + keys[0] + '</a>';
-				c += '		<p>' + b[i].description + '</p>';
+				c += '		<p>' + (b[i].description != null ? b[i].description : '') + '</p>';
                 c += '		<p class="date">' + relative_time(b[i].created_at) + ' ago - update ' + relative_time(b[i].updated_at) + ' ago</p>';
                 c += '	</div>';
                 c += '	<div class="contributor">';
@@ -108,11 +119,11 @@ $.fn.githubfeed = function(g, h) {
                 c += '	</div>';
                 c += '</div>'
             });
-            $('.' + ibacor[3] + 'gists').html(c)
+            $(z + ':eq(' + x + ') .' + ibacor[3] + 'gists').html(c)
         })
     }
 
-    function ibacor_activs(f) {
+    function ibacor_activs(f, x, z) {
         $.ajax({
             url: 'https://api.github.com/users/' + f + '/events',
             crossDomain: true,
@@ -265,7 +276,7 @@ $.fn.githubfeed = function(g, h) {
                     }
                 }
             });
-            $('.' + ibacor[3] + 'activ').html(e)
+            $(z + ':eq(' + x + ') .' + ibacor[3] + 'activ').html(e)
         })
     }
 
