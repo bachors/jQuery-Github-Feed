@@ -1,0 +1,16 @@
+{
+  "name": "jQuery-Github-Feed",
+  "main": "src/github-feed.js",
+  "homepage": "https://github.com/bachors/jQuery-Github-Feed",
+  "description": "This is a small and simple jQuery plugin to make github repositories, activity and gists widget from multiple accounts.",
+  "keywords": [
+    "github",
+    "feed",
+    "repositories",
+    "git"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ]
+}
