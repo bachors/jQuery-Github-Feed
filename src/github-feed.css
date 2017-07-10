@@ -5,6 +5,8 @@
 * Updates will be posted to this site.
 ***********************************************************/
 
+@import url(//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css);
+
 .github-feed {
 	font-family: Helvetica, arial, freesans, clean, sans-serif;
 	height: 100%;
@@ -24,9 +26,9 @@
 /* header */
 .github-feed .head {
 	font-size: 1em;
-	width: calc(100% - 20px);
+	width: 100%;
 	padding: 10px;
-	height: 70px;
+	height: 80px;
 	background: #f5f5f5;
 	border-bottom: 1px solid #d8d8d8;
 	display: block;
@@ -89,6 +91,7 @@
 .github-feed  .gftabs {
 	display: block;
 	width: 100%;
+	background: #fafafa;
 }
 
 .github-feed  .gftabs .gftab {
@@ -136,7 +139,7 @@
 	display: block;
 	padding: 10px;
 	padding-right: 0;
-	width: calc(100% - 10px);
+	width: 100%;
 	border-bottom: 1px solid #d8d8d8;
 	font-weight: normal;
 }
@@ -230,7 +233,7 @@
 /* footer */
 .github-feed .foot {
 	background: #f5f5f5;
-	width: calc(100% - 20px);
+	width: 100%;
 	padding: 5px 10px 5px 10px;
 	border-top: 1px solid #d8d8d8;
 	font-size: 0.8em;
