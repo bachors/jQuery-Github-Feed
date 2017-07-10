@@ -37,5 +37,3 @@ $(document).ready(function(){
     );
 });
 &lt;/script&gt;</pre>
-
-<h2><a href="http://ibacor.com/demo/jquery-github-feed">DEMO</a></h2>
